@@ -38,7 +38,7 @@ To run the Employment Dashboard on your local machine:
 
 1. Clone the repository: `git clone <repository URL>`
 2. Install dependencies: `npm install`
-3. Configure the database connection in `server.js` file.
+3. Configure the database connection in `dbConnection.js` file.
 4. Start the server: `npm start`
 5. Open the frontend by navigating to `http://localhost:3000` in your browser.
 
