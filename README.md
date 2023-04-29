@@ -44,9 +44,9 @@ To run the Employment Dashboard on your local machine:
 
 ## Screenshots
 You can find screenshots of the Employment Dashboard below:
-- Admin Homepage: ![Alt Text](admin-hp.jpg "Optional Title")
-- Admin Homepage: [insert image here]
-- Applicant Requests: [insert image here]
+- Admin Homepage: ![Alt Text](admin-hp.jpg "Admin Homepage")
+- Applicant Homepage: ![Alt Text](applicant-hp.jpg "Applicant Homepage")
+- Applicant Requests: ![Alt Text](applicant-req.jpg "Applicant Requests")
 
 ## Contributing
 
