@@ -30,10 +30,6 @@ The Employment Dashboard is a web application that helps people find jobs. It al
 - Job Model: The Job model consists of position, description, offer, maximum candidate number, and qualifications.
 - Qualifications Model: The Qualifications model consists of description.
 
-Yes, you can add icons to your `Technologies` section to make it more visually appealing and easier to read. One way to do this is to use icons from a library like Font Awesome.
-
-Here is an example of how you might update your `Technologies` section to include icons:
-
 ## Technologies
 
 - Backend: <i class="fab fa-node-js"></i> Node.js and <i class="fab fa-node-js"></i> Express.js
