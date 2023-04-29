@@ -1,6 +1,6 @@
 # Employment Dashboard
 
-Employment Dashboard is a web application that helps people find jobs. It consists of two types of users: Admin and Applicant. Admin users can manage jobs, qualifications, and applicants, while Applicant users can view and filter jobs and request jobs from the available listings.
+project called "Employment", which helps people to find jobs.
 
 ## Project Overview
 
