@@ -2,6 +2,10 @@
 
 Employment Dashboard is a web application that helps people find jobs. It consists of two types of users: Admin and Applicant. Admin users can manage jobs, qualifications, and applicants, while Applicant users can view and filter jobs and request jobs from the available listings.
 
+## Project Overview
+
+The Employment Dashboard is a web application that helps people find jobs. It allows job seekers to view and filter job listings, and submit requests to apply for available positions. Employers can manage job listings, qualifications, and applications, and review and accept applicant requests. The Employment Dashboard is built with Node.js, Express.js, MySQL, and React.js, and includes features for both admin and applicant users.
+
 ## Features
 
 ### Admin User
@@ -32,9 +36,9 @@ Employment Dashboard is a web application that helps people find jobs. It consis
 - Database: MySQL
 - Frontend: React.js
 
-## Installation and Setup
+## Getting Started
 
-To run the Employment Dashboard on your local machine:
+To get started with the Employment Dashboard:
 
 1. Clone the repository: `git clone <repository URL>`
 2. Install dependencies: `npm install`
