@@ -1,0 +1,1014 @@
+{
+	"info": {
+		"_postman_id": "ee53b6a2-22f0-4a4b-ab34-c091c753caab",
+		"name": "Employment-Dashboard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26739985"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"user one test\",\r\n    \"password\":\"123456789\",\r\n    \"email\":\"usertest@gmail.com\",\r\n    \"phone\":\"12345678910\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"user1@gmail.com\",\r\n    \"password\":\"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "334fae76a8895b3d906efcb25090b504",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Update job",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"position\":\"Full Stack Developer\",\r\n    \"description\":\"B Any valid descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription\",\r\n    \"offer\":\"5000\",\r\n    \"max_candidate_number\":\"20\",\r\n    \"qualifications\": [2, 4, 1]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/jobs/update/15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs",
+										"update",
+										"15"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete job",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/jobs/delete/16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs",
+										"delete",
+										"16"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read all jobs",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/jobs/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read job with id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/jobs/46",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs",
+										"46"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create job",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"position\":\"Demo Devloper\",\r\n    \"description\":\"Any valid descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription\",\r\n    \"offer\":\"4000.00\",\r\n    \"max_candidate_number\":\"2\",\r\n    \"qualifications\": [5,8]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/jobs/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Show Specific Job",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/jobs/show/17",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs",
+										"show",
+										"17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search History",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/jobs/search_history/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs",
+										"search_history",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View & Filter",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Response time is less than 200ms\", function (){",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/jobs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs"
+									],
+									"query": [
+										{
+											"key": "position",
+											"value": "Android Developer",
+											"disabled": true
+										},
+										{
+											"key": "offer",
+											"value": "4000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Send Request",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "b2b09210cbc414e654c979754a524503",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"job_id\":\"55\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/jobs/apply/13",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs",
+										"apply",
+										"13"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "b2b09210cbc414e654c979754a524503",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/jobs/search/13?search=Demo Devloper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs",
+										"search",
+										"13"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "Demo Devloper"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/jobs/status/11?jobId=43",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs",
+										"status",
+										"11"
+									],
+									"query": [
+										{
+											"key": "jobId",
+											"value": "43"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/jobs/status/all/13",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"jobs",
+										"status",
+										"all",
+										"13"
+									],
+									"query": [
+										{
+											"key": "jobId",
+											"value": "43",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Applicants",
+			"item": [
+				{
+					"name": "create applicant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "2747c60dc69db2bbd45349f3adf4ec43",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ezio Auditore\",\r\n    \"email\":\"user1000@gmail.com\",\r\n    \"phone\":\"12345678910\",\r\n    \"password\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/applicants/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"applicants",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update applicant",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "2747c60dc69db2bbd45349f3adf4ec43",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"AuserUserUser1234\",\r\n    \"email\":\"user4011@gmail.com\",\r\n    \"phone\":\"12345678910\",\r\n    \"password\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/applicants/update/25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"applicants",
+								"update",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete applicant",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "2747c60dc69db2bbd45349f3adf4ec43",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/applicants/delete/25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"applicants",
+								"delete",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list applicants",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/applicants/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"applicants",
+								"all"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "useruseruser2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list applicant with id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/applicants/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"applicants",
+								"2"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "useruseruser2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Qualifications",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Create qualification",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\":\"Hello, World !\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/qualifications/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"qualifications",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update qualification",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "2747c60dc69db2bbd45349f3adf4ec43",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\":\"HI HI \"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/qualifications/update/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"qualifications",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete qualification",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "2747c60dc69db2bbd45349f3adf4ec43",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/qualifications/delete/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"qualifications",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read all qualifications",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/qualifications/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"qualifications",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read qual by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/qualifications/14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"qualifications",
+										"14"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Requests",
+			"item": [
+				{
+					"name": "Requests History",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/applicants/requests/history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"applicants",
+								"requests",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"Accepted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/applicants/requests/167",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"applicants",
+								"requests",
+								"167"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/applicants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"applicants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Request by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/applicants/user/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"applicants",
+								"user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
