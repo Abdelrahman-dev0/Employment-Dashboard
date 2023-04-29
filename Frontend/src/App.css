@@ -1,0 +1,70 @@
+.App {
+  margin-left: auto;
+  width: 85%;
+}
+
+.outlet {
+  background-color: #dadada;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.App .outlet h3 {
+  color: #212529;
+}
+.flex-column p {
+  font-size: small;
+}
+.App .side {
+  background-color: black;
+  width: 15%;
+  z-index: 1;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding: 0.5rem;
+  color: white;
+}
+.App .side .nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin: 5px;
+}
+.App .side .nav-link:hover {
+  background-color: #4c54cc;
+}
+.App .side .header {
+  text-decoration: none;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+.App .side .nav-link .icon {
+  color: white;
+  margin-right: 1rem;
+}
+.App .side .header .logo{
+  color: #4c54cc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-size: 2rem;
+}
+
+.App .side .header h3{
+  color: white;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.App .header .icon{
+  margin-right: 1rem;
+}
+.App .side .header .logo img{
+  margin-right: 1rem;
+}

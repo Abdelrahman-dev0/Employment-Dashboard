@@ -1,0 +1,35 @@
+.content .me-auto .nav-link:hover {
+  border-radius: 10px;
+  background-color: #4c54cc;
+}
+.content .ms-auto .nav-link:hover {
+  background-color: #4c54cc;
+}
+.content .ms-auto .nav-link {
+  margin-left: 2rem;
+  border-radius: 10px;
+  color: white;
+}
+.content .ms-auto .search #button-addon1{
+  background-color: #4c54cc;
+  color: white;
+  border-width: 1px;
+  border-color: white;
+}
+.content .ms-auto .search #button-addon1{
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+
+}
+.content .ms-auto .search .area{
+  background-color: black;
+  border-radius: 50px;
+  color: white;
+}
+.content .ms-auto .name{
+  background-color: #4c54cc;
+  margin: 0;
+  border-radius: 10px;
+  color: white;
+  padding: 0.5rem;
+}

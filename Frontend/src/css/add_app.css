@@ -1,0 +1,16 @@
+.app-container{
+    background-color: #ececec;
+    width: 40rem;
+    height: 30rem;
+
+}
+
+.app-container .form #add{
+    margin: 0;
+
+}
+.app-container .form #cancel{
+    width: 4.5rem;
+    margin: 0;
+    
+}

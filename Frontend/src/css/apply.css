@@ -1,0 +1,93 @@
+.apply-job-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.apply-job-button {
+    background-color: #1E88E5;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.apply-job-button:hover {
+    background-color: #0D47A1;
+}
+
+.apply-job-icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.application-status {
+    margin-left: 20px;
+    border: 2px solid #1E88E5;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.application-status-label {
+    margin: 0;
+    font-weight: bold;
+    color: #1E88E5;
+    margin-bottom: 5px;
+}
+
+.application-status-value {
+    margin: 0;
+    color: #333;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status-text {
+    display: inline-block;
+}
+
+.accepted {
+    background-color: #4CAF50;
+}
+
+.declined {
+    background-color: #F44336;
+}
+
+.accepted-icon,
+.declined-icon {
+    margin-left: 5px;
+    color: white;
+}
+
+.accepted-icon {
+    font-size: 16px;
+}
+
+.declined-icon {
+    font-size: 18px;
+}
+
+.max-candidates-reached {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

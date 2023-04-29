@@ -1,0 +1,59 @@
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #6c757d;
+}
+
+.nav-link .log{
+  margin-right: 1rem;
+}
+
+.nav-link:hover {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.icon {
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+
+.nav-link-label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #212529;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo-highlight {
+  color: whitesmoke;
+
+}
+
+.text-muted {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sidebar-group-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #6c757d;
+}
+
+.sidebar-group-icon {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
