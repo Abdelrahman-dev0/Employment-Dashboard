@@ -48,6 +48,13 @@ You can find screenshots of the Employment Dashboard below:
 - Applicant Homepage: ![Alt Text](applicant-hp.jpg "Applicant Homepage")
 - Applicant Requests: ![Alt Text](applicant-req.jpg "Applicant Requests")
 
+## Resources
+
+- Bootstrap: A front-end framework for building responsive websites. [https://getbootstrap.com/](https://getbootstrap.com/)
+- Font Awesome: A library of icons and fonts for use in web design. [https://fontawesome.com/](https://fontawesome.com/)
+- React Bootstrap: Bootstrap components built with React. [https://react-bootstrap.github.io/](https://react-bootstrap.github.io/)
+- React Icons: A library of icons for use in React applications. [https://react-icons.github.io/react-icons/](https://react-icons.github.io/react-icons/)
+
 ## Contributing
 
 If you would like to contribute to the Employment Dashboard project, please follow these guidelines:
