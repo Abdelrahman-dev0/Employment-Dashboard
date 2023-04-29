@@ -75,3 +75,8 @@ If you would like to contribute to the Employment Dashboard project, please foll
 6. Push your changes to your fork: `git push origin <branch name>`
 7. Create a pull request.
 ---
+## Contact
+
+If you have any questions or feedback about the Employment Dashboard, please feel free to contact us:
+
+- Email: [abdul_rahman_ayman_1995@fci.helwan.edu.eg](mailto:abdul_rahman_ayman_1995@fci.helwan.edu.eg)
