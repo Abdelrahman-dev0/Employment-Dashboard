@@ -36,9 +36,9 @@ Here is an example of how you might update your `Technologies` section to includ
 
 ## Technologies
 
-- Backend: Express.js
-- Database: MySQL
-- Frontend: React.js
+- Backend: <i class="fab fa-node-js"></i> Node.js and <i class="fab fa-node-js"></i> Express.js
+- Database: <i class="fas fa-database"></i> MySQL
+- Frontend: <i class="fab fa-react"></i> React.js
 
 ## Getting Started
 
