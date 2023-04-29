@@ -29,6 +29,7 @@ Employment Dashboard is a web application that helps people find jobs. It consis
 ## Technologies
 
 - Backend: Node.js and Express.js
+- Database: MySQL
 - Frontend: React.js
 
 ## Installation and Setup
@@ -40,6 +41,9 @@ To run the Employment Dashboard on your local machine:
 3. Configure the database connection in `server.js` file.
 4. Start the server: `npm start`
 5. Open the frontend by navigating to `http://localhost:3000` in your browser.
+
+## Screenshots
+You can find screenshots of the Employment Dashboard below:
 
 ## Contributing
 
