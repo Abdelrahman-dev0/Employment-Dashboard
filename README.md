@@ -30,10 +30,6 @@ The Employment Dashboard is a web application that helps people find jobs. It al
 - Job Model: The Job model consists of position, description, offer, maximum candidate number, and qualifications.
 - Qualifications Model: The Qualifications model consists of description.
 
-Yes, you can add icons to your `Technologies` section to make it more visually appealing and easier to read. One way to do this is to use icons from a library like Font Awesome.
-
-Here is an example of how you might update your `Technologies` section to include icons:
-
 ## Technologies
 
 - Backend: <i class="fab fa-node-js"></i> Node.js and <i class="fab fa-node-js"></i> Express.js
@@ -52,9 +48,9 @@ To get started with the Employment Dashboard:
 
 ## Screenshots
 You can find screenshots of the Employment Dashboard below:
-- Admin Homepage: ![Alt Text](admin-hp.jpg "Admin Homepage")
-- Applicant Homepage: ![Alt Text](applicant-hp.jpg "Applicant Homepage")
-- Applicant Requests: ![Alt Text](applicant-req.jpg "Applicant Requests")
+- ## Admin Homepage: ![Alt Text](admin-hp.jpg "Admin Homepage")
+- ## Applicant Homepage: ![Alt Text](applicant-hp.jpg "Applicant Homepage")
+- ## Applicant Requests: ![Alt Text](applicant-req.jpg "Applicant Requests")
 
 ## Resources
 
@@ -75,3 +71,12 @@ If you would like to contribute to the Employment Dashboard project, please foll
 6. Push your changes to your fork: `git push origin <branch name>`
 7. Create a pull request.
 ---
+## Contact
+
+If you have any questions or feedback about the Employment Dashboard, please feel free to contact us:
+
+- Email: [abdul_rahman_ayman_1995@fci.helwan.edu.eg](mailto:abdul_rahman_ayman_1995@fci.helwan.edu.eg)
+
+---
+
+© 2023 Employment Dashboard. All rights reserved.
