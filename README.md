@@ -52,9 +52,9 @@ To get started with the Employment Dashboard:
 
 ## Screenshots
 You can find screenshots of the Employment Dashboard below:
-- Admin Homepage: ![Alt Text](admin-hp.jpg "Admin Homepage")
-- Applicant Homepage: ![Alt Text](applicant-hp.jpg "Applicant Homepage")
-- Applicant Requests: ![Alt Text](applicant-req.jpg "Applicant Requests")
+- ## Admin Homepage: ![Alt Text](admin-hp.jpg "Admin Homepage")
+- ## Applicant Homepage: ![Alt Text](applicant-hp.jpg "Applicant Homepage")
+- ## Applicant Requests: ![Alt Text](applicant-req.jpg "Applicant Requests")
 
 ## Resources
 
