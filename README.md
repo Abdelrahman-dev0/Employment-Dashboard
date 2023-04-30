@@ -34,7 +34,7 @@ The Employment Dashboard is a web application that helps people find jobs. It al
 
 - Backend: Node.js 🚀 and Express.js
 - Database: MySQL
-- Frontend: React.js
+- Frontend: React.js ⚛️
 
 ## Getting Started
 
