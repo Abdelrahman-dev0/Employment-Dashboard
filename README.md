@@ -75,8 +75,7 @@ If you would like to contribute to the Employment Dashboard project, please foll
 
 If you have any questions or feedback about the Employment Dashboard, please feel free to contact us:
 
-- Email: [abdul_rahman_ayman_1995@fci.helwan.edu.eg](mailto:abdul_rahman_ayman_1995@fci.helwan.edu.eg)
-
+- Email:
 ---
 
 © 2023 Employment Dashboard. All rights reserved.
