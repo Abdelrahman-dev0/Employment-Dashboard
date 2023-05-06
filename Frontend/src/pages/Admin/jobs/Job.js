@@ -13,7 +13,13 @@ import Spinner from "react-bootstrap/Spinner";
 import { getAuthUser } from "../../../helper/storage";
 import { Tooltip, OverlayTrigger } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import "../../../css/job.css";
+import {
+  faPlus,
+  faBriefcase,
+  faEdit,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Job = () => {
   const auth = getAuthUser();
@@ -23,8 +29,6 @@ const Job = () => {
     err: null,
     reload: 0,
   });
-
-  /* const [qualifications, setQualifications] = useState([]); */
 
   useEffect(() => {
     setJobs({ ...jobs, loading: true });
@@ -102,56 +106,54 @@ const Job = () => {
             <div className="row">
               {jobs.results.map((job) => (
                 <div className="col-sm-6 col-md-4 mb-4" key={job.id}>
-                  <div className="card rounded-0 border-0 shadow-sm">
+                  <div className="card border-0 shadow">
+                    <div className="card-img-top bg-light p-3 d-flex justify-content-center align-items-center">
+                      <FontAwesomeIcon
+                        icon={faBriefcase}
+                        size="4x"
+                        className="color-change"
+                      />
+                    </div>
                     <div className="card-body">
-                      <h5 className="card-title mb-3">{job.position}</h5>
-                      <p className="card-text mb-3">{job.description}</p>
-                      <div className="d-flex justify-content-between align-items-center">
-                        <div>
-                          <ul className="list-unstyled mb-0">
-                            <li>
-                              <strong>Offer:</strong> {job.offer}
+                      <h5 className="card-title">{job.position}</h5>
+                      <p className="card-text">{job.description}</p>
+                    </div>
+                    <ul className="list-group list-group-flush">
+                      <li className="list-group-item">
+                        <strong>Offer:</strong> {job.offer}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Candidates:</strong> {job.max_candidate_number}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Qualifications:</strong>
+                        <ul className="list-unstyled mb-0">
+                          {job.qualifications.map((qualification, index) => (
+                            <li key={index} className="text-muted">
+                              {qualification}
                             </li>
-                            <li>
-                              <strong>Candidates:</strong>{" "}
-                              {job.max_candidate_number}
-                            </li>
-                            <li>
-                              <strong>Qualifications:</strong>
-                            </li>
-                            <ul className="list-unstyled mb-0">
-                              {job.qualifications.map(
-                                (qualification, index) => (
-                                  <li
-                                    key={index}
-                                    className="text-muted"
-                                    style={{ marginLeft: "20px" }}
-                                  >
-                                    {qualification}
-                                  </li>
-                                )
-                              )}
-                            </ul>
-                          </ul>
-                        </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <Link
-                            to={`update/${job.id}`}
-                            className="btn btn-sm btn-outline-primary me-3"
-                          >
-                            <BiEdit style={{ fontSize: "1.5rem" }} />
-                          </Link>
-                          <button
-                            type="button"
-                            className="btn btn-sm btn-outline-danger"
-                            onClick={(e) => {
-                              deleteJob(job.id);
-                            }}
-                          >
-                            <MdDelete style={{ fontSize: "1.5rem" }} />
-                          </button>
-                        </div>
-                      </div>
+                          ))}
+                        </ul>
+                      </li>
+                    </ul>
+                    <div className="card-footer d-flex justify-content-between align-items-center">
+                      <Link
+                        to={`update/${job.id}`}
+                        className="btn btn-outline-primary"
+                      >
+                        <FontAwesomeIcon icon={faEdit} className="me-2" />
+                        Edit
+                      </Link>
+                      <button
+                        type="button"
+                        className="btn btn-outline-danger"
+                        onClick={(e) => {
+                          deleteJob(job.id);
+                        }}
+                      >
+                        <FontAwesomeIcon icon={faTrash} className="me-2" />
+                        Delete
+                      </button>
                     </div>
                   </div>
                 </div>

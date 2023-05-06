@@ -145,28 +145,31 @@ const AddJob = () => {
             required
           />
         </div>
-        {isLoading ? (
-          <p>Loading qualifications...</p>
-        ) : (
-          <div className="form-group">
-            <label>Qualifications</label>
-            {qualifications.map((q) => (
-              <div key={q.id} className="form-check">
-                <input
-                  type="checkbox"
-                  id={q.id}
-                  name={q.id}
-                  checked={formData.qualifications.includes(q.id)}
-                  onChange={handleCheckboxChange}
-                  className="form-check-input"
-                />
-                <label htmlFor={q.id} className="form-check-label">
-                  {q.description}
-                </label>
-              </div>
-            ))}
-          </div>
-        )}
+
+        <div className="form-group">
+          <label className="form-label mb-3">Qualifications:</label>
+          {isLoading ? (
+            <p>Loading qualifications...</p>
+          ) : (
+            <div>
+              {qualifications.map((q) => (
+                <div key={q.id} className="form-check mb-2">
+                  <input
+                    type="checkbox"
+                    id={q.id}
+                    name={q.id}
+                    checked={formData.qualifications.includes(q.id)}
+                    onChange={handleCheckboxChange}
+                    className="form-check-input"
+                  />
+                  <label htmlFor={q.id} className="form-check-label">
+                    {q.description}
+                  </label>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
 
         <div className="form-buttons">
           <button type="submit" className="btn btn-primary">

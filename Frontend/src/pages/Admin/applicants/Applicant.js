@@ -100,7 +100,21 @@ const Applicant = () => {
                 <td>{applicant.name}</td>
                 <td>{applicant.email}</td>
                 <td>{applicant.phone}</td>
-                <td>{applicant.status}</td>
+                <td>
+                  {applicant.status === 1 ? (
+                    <div
+                      className="d-inline-block rounded-circle me-2"
+                      style={{
+                        width: "10px",
+                        height: "10px",
+                        backgroundColor: "#4CAF50",
+                      }}
+                    />
+                  ) : (
+                    <i className="fas fa-circle text-muted me-2" />
+                  )}
+                  {applicant.status === 1 ? "Active" : "Inactive"}
+                </td>
                 <td>
                   <div className="d-flex justify-content-start align-items-center">
                     <Link

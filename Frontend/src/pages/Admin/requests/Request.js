@@ -106,11 +106,12 @@ const Request = () => {
 
   return (
     <div>
+      <h1 style={{ textAlign: "center" }}>Requests</h1>
       <Table
         striped
         bordered
         hover
-        style={{ tableLayout: "fixed", width: "100%" }}
+        style={{ tableLayout: "fixed", width: "100%", marginTop: "20px" }}
         variant="light"
       >
         {/* Define the table header */}

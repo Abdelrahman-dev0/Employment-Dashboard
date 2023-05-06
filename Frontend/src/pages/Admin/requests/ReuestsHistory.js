@@ -128,6 +128,48 @@ const RequestsHistory = () => {
           ))}
         </tbody>
       </Table>
+      <style jsx>{`
+        .table-responsive {
+          margin-top: 20px;
+          overflow-x: auto;
+        }
+        table {
+          border-collapse: separate;
+          border-spacing: 0 15px;
+          width: 100%;
+        }
+        th,
+        td {
+          padding: 10px;
+          text-align: left;
+        }
+        th {
+          font-weight: bold;
+          background-color: #f3f3f3;
+          color: #333;
+          position: sticky;
+          top: 0;
+          z-index: 1;
+        }
+        tr:hover {
+          background-color: #f8f8f8;
+        }
+        tbody tr:nth-of-type(odd) {
+          background-color: #f8f8f8;
+        }
+        tbody tr:last-of-type {
+          border-bottom: 2px solid #ddd;
+        }
+        @media screen and (max-width: 767px) {
+          table {
+            border-spacing: 0 10px;
+          }
+          th,
+          td {
+            padding: 8px;
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -5,9 +5,14 @@ import { getAuthUser } from "../../../helper/storage";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes, faCheck } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTimes,
+  faCheck,
+  faSpinner,
+  faEdit,
+} from "@fortawesome/free-solid-svg-icons";
 
-const Update_Job = () => {
+const UpdateJob = () => {
   const auth = getAuthUser();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -33,12 +38,13 @@ const Update_Job = () => {
         },
       })
       .then((res) => {
+        const qualifications = res.data.qualifications.map((q) => q.id);
         setFormData({
           position: res.data.position,
           description: res.data.description,
           offer: res.data.offer,
           max_candidate_number: res.data.max_candidate_number,
-          qualifications: res.data.qualifications.map((q) => q.id),
+          qualifications: qualifications,
         });
         setIsLoading(false);
       })
@@ -136,114 +142,121 @@ const Update_Job = () => {
       });
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (errorMessage) {
-    return <div>{errorMessage}</div>;
-  }
-
   return (
     <div className="form-container">
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="position">Position</label>
-          <input
+      <div className="d-flex align-items-center justify-content-center mb-4">
+        <FontAwesomeIcon icon={faEdit} className="me-2 fs-4" />
+        <h2 className="m-0">Edit Job</h2>
+      </div>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="position" className="mb-3">
+          <Form.Label>Position</Form.Label>
+          <Form.Control
             type="text"
-            id="position"
             name="position"
             value={formData.position}
             onChange={handleInputChange}
-            className="form-control"
             required
+            placeholder="Enter position"
           />
-        </div>
+        </Form.Group>
 
-        <div className="form-group">
-          <label htmlFor="description">Description</label>
-          <textarea
-            id="description"
+        <Form.Group controlId="description" className="mb-3">
+          <Form.Label>Description</Form.Label>
+          <Form.Control
+            as="textarea"
             name="description"
             value={formData.description}
             onChange={handleInputChange}
-            className="form-control"
+            rows={4}
             required
+            placeholder="Enter job description"
           />
-        </div>
+        </Form.Group>
 
-        <div className="form-group">
-          <label htmlFor="offer">Offer</label>
+        <Form.Group controlId="offer" className="mb-3">
+          <Form.Label>Offer</Form.Label>
           <div className="input-group">
             <div className="input-group-prepend">
               <span className="input-group-text">$</span>
             </div>
-            <input
+            <Form.Control
               type="number"
-              id="offer"
               name="offer"
               min="0"
               step="0.01"
               value={formData.offer}
               onChange={handleInputChange}
-              className="form-control"
               required
+              placeholder="Enter offer amount"
             />
           </div>
-        </div>
+        </Form.Group>
 
-        <div className="form-group">
-          <label htmlFor="max_candidate_number">Max Candidate Number</label>
-          <input
+        <Form.Group controlId="max_candidate_number" className="mb-3">
+          <Form.Label>Max Candidate Number</Form.Label>
+          <Form.Control
             type="number"
-            id="max_candidate_number"
             name="max_candidate_number"
             min="1"
             value={formData.max_candidate_number}
             onChange={handleInputChange}
-            className="form-control"
             required
+            placeholder="Enter maximum number of candidates"
           />
-        </div>
+        </Form.Group>
 
-        {isLoading ? (
-          <p>Loading qualifications...</p>
-        ) : (
-          <div className="form-group">
-            <label>Qualifications</label>
-            {qualifications
-              ? qualifications.map((q) => (
-                  <div key={q.id} className="form-check">
-                    <input
-                      type="checkbox"
-                      name={q.id}
-                      checked={formData.qualifications.includes(q.id)}
-                      onChange={handleCheckboxChange}
-                      className="form-check-input"
-                    />
-                    <label htmlFor={q.id} className="form-check-label">
-                      {q.description}
-                    </label>
-                  </div>
-                ))
-              : null}
+        <Form.Group controlId="qualifications" className="mb-3">
+          <Form.Label className="mb-3">Qualifications</Form.Label>
+          {qualifications ? (
+            <div className="card p-4">
+              <div className="d-flex flex-wrap">
+                {qualifications.map((q) => (
+                  <Form.Check
+                    key={q.id}
+                    type="checkbox"
+                    name={q.id}
+                    label={q.description}
+                    checked={formData.qualifications.includes(q.id)}
+                    onChange={handleCheckboxChange}
+                    className="mb-3 me-4"
+                    style={{ minWidth: "250px" }}
+                    id={`qualification-${q.id}`}
+                    custom
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="text-center">
+              <FontAwesomeIcon icon={faSpinner} pulse />
+              <span className="ms-2">Loading qualifications...</span>
+            </div>
+          )}
+        </Form.Group>
+
+        {errorMessage && (
+          <div className="alert alert-danger" role="alert">
+            {errorMessage}
           </div>
         )}
 
-        <div className="form-buttons">
-          <button type="submit" className="btn btn-primary">
-            <FontAwesomeIcon icon={faCheck} className="icon-margin-right" />
-            Update Job
-          </button>
-
-          <Button variant="secondary" onClick={handleCancel}>
-            <FontAwesomeIcon icon={faTimes} className="icon-margin-right" />
+        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+          <Button variant="secondary" onClick={handleCancel} className="me-2">
+            <FontAwesomeIcon icon={faTimes} className="me-2" />
             Cancel
           </Button>
+
+          <Button type="submit" variant="primary">
+            {isLoading && (
+              <FontAwesomeIcon icon={faSpinner} pulse className="me-2" />
+            )}
+            Update Job
+          </Button>
         </div>
-      </form>
+      </Form>
     </div>
   );
 };
 
-export default Update_Job;
+export default UpdateJob;

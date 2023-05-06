@@ -1,0 +1,16 @@
+@keyframes color-change {
+    from {
+        color: #1abc9c;
+    }
+
+    to {
+        color: #9b59b6;
+    }
+}
+
+.color-change {
+    animation-name: color-change;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
