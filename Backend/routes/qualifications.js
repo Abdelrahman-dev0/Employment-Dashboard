@@ -30,12 +30,17 @@ router.post(
         [description]
       );
       const newQualificationId = result.insertId;
-      res
-        .status(201)
-        .json({ id: newQualificationId, description: description });
+      res.status(200).json({
+        message: "Qualification created successfully",
+        qualification: {
+          id: newQualificationId,
+          description: description,
+        },
+      });
     } catch (error) {
       res.status(500).json(error);
     }
+    return;
   }
 );
 
@@ -48,6 +53,12 @@ router.put("/update/:id", admin, async (req, res) => {
       return res.status(400).json({ msg: "Please provide a description" });
     }
     const query = util.promisify(conn.query).bind(conn);
+    const result = await query("SELECT * FROM qualifications WHERE id = ?", [
+      id,
+    ]);
+    if (result.length === 0) {
+      return res.status(404).json({ msg: "Qualification not found" });
+    }
     await query("UPDATE qualifications SET description = ? WHERE id = ?", [
       description,
       id,
@@ -56,6 +67,7 @@ router.put("/update/:id", admin, async (req, res) => {
   } catch (error) {
     res.status(500).json(error);
   }
+  return;
 });
 
 // ADMIN DELETE Qualifications [ Admin ]
@@ -63,6 +75,12 @@ router.delete("/delete/:id", admin, async (req, res) => {
   try {
     const { id } = req.params;
     const query = util.promisify(conn.query).bind(conn);
+    const result = await query("SELECT * FROM qualifications WHERE id = ?", [
+      id,
+    ]);
+    if (result.length === 0) {
+      return res.status(404).json({ msg: "Qualification not found" });
+    }
     await query("DELETE FROM qualifications WHERE id = ?", [id]);
     res.status(200).json({ msg: "Qualification deleted successfully" });
   } catch (error) {
@@ -75,7 +93,9 @@ router.get("/all", async (req, res) => {
   try {
     const query = util.promisify(conn.query).bind(conn);
     const qualifications = await query("SELECT * FROM qualifications");
-    res.status(200).json(qualifications);
+    res
+      .status(200)
+      .json({ msg: "Qualifications retrieved successfully", qualifications });
   } catch (error) {
     res.status(500).json(error);
   }
@@ -90,7 +110,7 @@ router.get("/:id", admin, async (req, res) => {
       `SELECT * FROM qualifications WHERE id = ${id}`
     );
     if (qualification.length === 0) {
-      res.status(404).json({ message: "Qualification not found" });
+      return res.status(404).json({ message: "Qualification not found" });
     } else {
       res.status(200).json(qualification[0]);
     }

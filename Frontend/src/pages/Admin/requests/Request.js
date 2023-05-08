@@ -19,7 +19,7 @@ const Request = () => {
     console.log("Accepting request with ID:", id);
     try {
       const response = await axios.put(
-        `http://localhost:4000/applicants/requests/${id}`,
+        `http://localhost:4000/requests/${id}`,
         { status: "Accepted" },
         {
           headers: {
@@ -43,7 +43,7 @@ const Request = () => {
     console.log("Declining request with ID:", id);
     try {
       const response = await axios.put(
-        `http://localhost:4000/applicants/requests/${id}`,
+        `http://localhost:4000/requests/${id}`,
         { status: "Declined" },
         {
           headers: {
@@ -66,7 +66,7 @@ const Request = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/applicants`, {
+        const response = await axios.get(`http://localhost:4000/requests/all`, {
           headers: {
             token: auth.token,
           },

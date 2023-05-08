@@ -19,19 +19,22 @@ const RequestsHistory = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/applicants`, {
-          headers: {
-            token: auth.token,
-          },
-        });
+        const response = await axios.get(
+          `http://localhost:4000/requests/history`,
+          {
+            headers: {
+              token: auth.token,
+            },
+          }
+        );
         console.log("response.data:", response.data);
 
-        const applicants = response.data.map((applicant) => ({
-          name: applicant.name,
-          email: applicant.email,
-          position: applicant.position,
-          status: applicant.status,
-          requested_time: applicant.requested_time_formatted,
+        const applicants = response.data.requests.map((request) => ({
+          name: request.name,
+          email: request.email,
+          position: request.position,
+          status: request.status,
+          requested_time: request.requested_time,
         }));
 
         console.log("applicants:", applicants);

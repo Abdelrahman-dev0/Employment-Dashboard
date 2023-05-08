@@ -57,7 +57,7 @@ const UpdateJob = () => {
     axios
       .get("http://localhost:4000/qualifications/all")
       .then((res) => {
-        setQualifications(res.data);
+        setQualifications(res.data.qualifications);
       })
       .catch((err) => {
         setErrorMessage("Failed to fetch qualifications.");

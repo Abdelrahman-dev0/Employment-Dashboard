@@ -87,9 +87,9 @@ router.post(
         msg: "Job Created Successfully!",
       });
     } catch (error) {
-      console.log(error);
       res.status(500).json({ errors: [{ msg: "Internal server error" }] });
     }
+    return;
   }
 );
 
@@ -396,6 +396,22 @@ router.get("/search_history/:user_id", async (req, res) => {
   try {
     const userId = req.params.user_id;
     const query = util.promisify(conn.query).bind(conn);
+
+    // Check if user exists
+    const user = await query(
+      `
+        SELECT id
+        FROM users
+        WHERE id = ?
+      `,
+      [userId]
+    );
+
+    if (user.length === 0) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+
+    // Retrieve search history
     const searchHistory = await query(
       `
        SELECT search_text, search_time
@@ -409,6 +425,13 @@ router.get("/search_history/:user_id", async (req, res) => {
       search_text: history.search_text,
       search_time: formatDate(history.search_time),
     }));
+
+    if (formattedSearchHistory.length === 0) {
+      return res
+        .status(404)
+        .json({ msg: "No search history found for this user" });
+    }
+
     res.status(200).json({
       search_history: formattedSearchHistory,
       msg: "Search history retrieved successfully!",
@@ -479,7 +502,7 @@ router.post("/apply/:id", async (req, res) => {
   }
 });
 
-// SEE  USER STATUS OF APPLIED JOB by job_id
+// USER STATUS OF APPLIED JOB by user_id
 router.get("/status/:userId", async (req, res) => {
   try {
     const userId = req.params.userId;
@@ -505,7 +528,7 @@ router.get("/status/:userId", async (req, res) => {
   }
 });
 
-// SEE  USER STATUS OF ALL APPLIED JOB
+// USER STATUS OF ALL APPLIED JOB
 router.get("/status/all/:userId", async (req, res) => {
   try {
     const userId = req.params.userId;

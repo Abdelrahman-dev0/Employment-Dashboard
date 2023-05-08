@@ -14,6 +14,7 @@ const auth = require("./routes/Auth");
 const jobs = require("./routes/jobs");
 const applicants = require("./routes/applicants");
 const qualifications = require("./routes/qualifications");
+const requests = require("./routes/requests");
 
 // ================ RUN THE APP ================ //
 app.listen(4000, "localhost", () => {
@@ -25,3 +26,4 @@ app.use("/auth", auth);
 app.use("/jobs", jobs);
 app.use("/applicants", applicants);
 app.use("/qualifications", qualifications);
+app.use("/requests", requests);

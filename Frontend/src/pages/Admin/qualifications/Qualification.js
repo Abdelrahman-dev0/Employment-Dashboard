@@ -26,7 +26,7 @@ const Qualification = () => {
         console.log(res.data);
         setQualifications({
           ...qualifications,
-          results: res.data,
+          results: res.data.qualifications,
           loading: false,
           err: null,
         });

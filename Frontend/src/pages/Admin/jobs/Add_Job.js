@@ -25,7 +25,7 @@ const AddJob = () => {
     axios
       .get("http://localhost:4000/qualifications/all")
       .then((res) => {
-        setQualifications(res.data);
+        setQualifications(res.data.qualifications);
         setIsLoading(false);
       })
       .catch((err) => {

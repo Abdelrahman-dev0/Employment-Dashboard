@@ -9,7 +9,6 @@ const crypto = require("crypto");
 // Login Form
 router.post(
   "/login",
-
   body("email").isEmail().withMessage("Please Enter a Valid Email!"),
   body("password")
     .isLength({ min: 8, max: 12 })
@@ -31,7 +30,7 @@ router.post(
         res.status(404).json({
           errors: [
             {
-              msg: "email or password not found!",
+              msg: "email or password incorrect!",
             },
           ],
         });
@@ -55,8 +54,9 @@ router.post(
         res.status(200).json(updatedUser);
       } else {
         res.status(401).json({
-          error: "email or password not found!",
+          error: "email or password incorrect!",
         });
+        return;
       }
     } catch (err) {
       console.error(err);
@@ -102,6 +102,7 @@ router.post(
             },
           ],
         });
+        return;
       }
 
       // 3- PREPARE OBJECT USER TO ---> SAVE
@@ -116,10 +117,14 @@ router.post(
       // 4- INSERT USER INTO DB
       await query("insert into users set ?", userData);
       delete userData.password;
-      res.status(200).json(userData);
+      res.status(200).json({
+        message: "User created successfully",
+        user: userData,
+      });
     } catch (err) {
       res.status(500).json({ err: err });
     }
+    return;
   }
 );
 
@@ -142,9 +147,11 @@ router.post("/logout", async (req, res) => {
     } else {
       res.status(400).json({ message: "Invalid token" });
     }
+    return;
   } catch (err) {
     res.status(500).json({ err: err });
   }
+  return;
 });
 
 module.exports = router;
